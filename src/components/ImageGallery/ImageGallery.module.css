@@ -1,0 +1,22 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+
+
+  padding: 5px;
+  margin: 0;
+
+  list-style: none;
+}
+
+.button {
+  grid-area: 5 / 2 / 6 / 3;
+}
+
+.title{
+  text-align: center;
+  font-family: "Century Gothic", sans-serif;
+}
