@@ -1,28 +1,29 @@
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Component } from 'react';
+import {  useState } from 'react';
 import SearchBar from './SearchBar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
+import { ModalProvider }  from './ModalContext/ModalContext';
 
-export class App extends Component {
-  state = {
-    require: '',
-  };
+function App () {
+  const [require, setRequire] = useState('')
+  const [page, setPage] = useState(1);
 
-  onSubmit = (require) => {
-    this.setState({require});
+  const onSubmit = (require) => {
+    setRequire(require);
   }
-
-  render() {
-    const { require } = this.state;
 
     return (
+      <ModalProvider>
       <main>
-        <SearchBar onSubmit={this.onSubmit}/>
-        <ImageGallery require={require} />
+        <SearchBar onSubmit={onSubmit} page={page} setPage={setPage}/>
+        <ImageGallery require={require} page={page} setPage={setPage}/>
         <ToastContainer />
       </main>
+      </ModalProvider>
     );
-  }
-};
+}
+
+export default App;
+
 
