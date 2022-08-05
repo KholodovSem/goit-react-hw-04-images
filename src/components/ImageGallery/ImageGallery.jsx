@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { useUpdateEffect } from 'react-use';
 import ContentLoader from 'react-content-loader';
 import ImageGalleryItem from './ImageGalleryItem';
