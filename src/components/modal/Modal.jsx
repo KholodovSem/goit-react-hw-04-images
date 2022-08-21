@@ -1,6 +1,7 @@
 import { createPortal } from 'react-dom';
 import style from './Modal.module.css';
 import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 const modalRoot = document.querySelector('#modalRoot');
 
@@ -36,4 +37,11 @@ function Modal({ src, alt, onToggleModal }) {
   );
 }
 
+Modal.propTypes = {
+  alt: PropTypes.string.isRequired,
+  onToggleModal: PropTypes.func.isRequired,
+  src: PropTypes.string.isRequired,
+};
+
 export default Modal;
+

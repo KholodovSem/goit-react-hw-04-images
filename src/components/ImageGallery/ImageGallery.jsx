@@ -7,6 +7,7 @@ import style from './ImageGallery.module.css';
 import findImage from '../../services/findImage';
 import Modal from '../modal/Modal';
 import { useModalContext } from '../ModalContext/ModalContext';
+import PropTypes from 'prop-types';
 
 
 function ImageGallery({ require, page, setPage }) {
@@ -83,6 +84,11 @@ function ImageGallery({ require, page, setPage }) {
   }
 }
 
+ImageGallery.propTypes = {
+  page: PropTypes.number.isRequired,
+  require: PropTypes.string.isRequired,
+  setPage: PropTypes.func.isRequired,
+};
 
 export default ImageGallery;
 
