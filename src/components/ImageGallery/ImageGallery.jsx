@@ -46,15 +46,7 @@ function ImageGallery({ require, page, setPage }) {
       return prevState + 1;
     });
   };
-
-  const getUrlAndAlt = (e) => {
-    e.preventDefault();
-    const largeImage = e.currentTarget.href;
-    const alt = e.currentTarget.getAttribute('alt');
-
-    onClickAtImage(largeImage, alt);
-  };
-
+  
   if (status === 'idle') {
     return (<h1 className={style.title}>Что будем искать?</h1>);
   }
@@ -73,7 +65,6 @@ function ImageGallery({ require, page, setPage }) {
               largeImg={image.largeImageURL}
               alt={image.tags}
               key={image.id}
-              onClick={getUrlAndAlt}
             />)
           }
         </ul>
