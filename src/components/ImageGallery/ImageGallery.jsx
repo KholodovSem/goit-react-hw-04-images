@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
 function ImageGallery({ require, page, setPage }) {
   const [images, setImages] = useState([]);
   const [status, setStatus] = useState('idle');
-  const { showModal, largeImage, alt, disableModal, onClickAtImage } = useModalContext();
+  const { showModal, largeImage, alt, disableModal } = useModalContext();
 
   useUpdateEffect(() => {
     setStatus('pending');
@@ -46,7 +46,7 @@ function ImageGallery({ require, page, setPage }) {
       return prevState + 1;
     });
   };
-  
+
   if (status === 'idle') {
     return (<h1 className={style.title}>Что будем искать?</h1>);
   }
